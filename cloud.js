@@ -2,6 +2,7 @@
 const status=t=>{$('cloudStatus').textContent=t;document.querySelector('.top .tag').textContent=t};
 if(!window.supabase){status('雲端元件未載入，本機可用');return}
 const client=window.supabase.createClient('https://hvfrduzoishcjdpjreot.supabase.co','sb_publishable_98hpGPko7T7eoVUktc7tCA_Y9RC8zSx');
+window.fitnessClient=client;
 let user=null, rev=null, busy=false, ready=false, timer, generation=0;
 const empty=()=>({sessions:{},week:[...weekDefault],nutrition:{}});
 const read=(k)=>{try{return JSON.parse(localStorage.getItem(k))}catch{return null}};
